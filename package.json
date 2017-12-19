@@ -4,7 +4,7 @@
   "version": "0.0.0-development",
   "author": "Stephan Bönnemann <stephan@boennemann.me> (http://boennemann.me)",
   "bugs": {
-    "url": "https://github.com/semantic-release/condition-solano/issues"
+    "url": "https://github.com/jcoreio/condition-solano/issues"
   },
   "config": {
     "commitizen": {
@@ -26,7 +26,7 @@
     "nock": "^9.1.4",
     "nyc": "^11.2.1",
     "prettier": "~1.9.2",
-    "semantic-release": "^10.0.0",
+    "semantic-release": "^8.2.0",
     "xo": "^0.18.2"
   },
   "engines": {
@@ -36,7 +36,7 @@
     "index.js",
     "lib"
   ],
-  "homepage": "https://github.com/semantic-release/condition-solano#readme",
+  "homepage": "https://github.com/jcoreio/condition-solano#readme",
   "keywords": [
     "publish",
     "release",
@@ -69,14 +69,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/semantic-release/condition-solano.git"
+    "url": "https://github.com/jcoreio/condition-solano.git"
   },
   "scripts": {
     "cm": "git-cz",
     "codecov": "codecov -f coverage/coverage-final.json",
     "lint": "xo",
     "pretest": "npm run lint",
-    "semantic-release": "semantic-release",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "test": "nyc ava -v"
   },
   "xo": {
