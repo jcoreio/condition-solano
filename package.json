@@ -1,10 +1,10 @@
 {
-  "name": "@semantic-release/condition-travis",
-  "description": "Check Travis CI environment before publishing",
+  "name": "@jcoreio/condition-solano",
+  "description": "Check Solano CI environment before publishing",
   "version": "0.0.0-development",
   "author": "Stephan Bönnemann <stephan@boennemann.me> (http://boennemann.me)",
   "bugs": {
-    "url": "https://github.com/semantic-release/condition-travis/issues"
+    "url": "https://github.com/semantic-release/condition-solano/issues"
   },
   "config": {
     "commitizen": {
@@ -14,8 +14,7 @@
   "dependencies": {
     "@semantic-release/error": "^2.0.0",
     "github": "^13.0.1",
-    "parse-github-url": "^1.0.1",
-    "travis-deploy-once": "^3.1.2"
+    "parse-github-url": "^1.0.1"
   },
   "devDependencies": {
     "ava": "^0.24.0",
@@ -24,12 +23,10 @@
     "cz-conventional-changelog": "^2.0.0",
     "eslint-config-prettier": "^2.5.0",
     "eslint-plugin-prettier": "^2.3.0",
-    "nock": "^9.0.22",
+    "nock": "^9.1.4",
     "nyc": "^11.2.1",
     "prettier": "~1.9.2",
-    "proxyquire": "^1.7.1",
     "semantic-release": "^10.0.0",
-    "sinon": "^4.0.0",
     "xo": "^0.18.2"
   },
   "engines": {
@@ -39,13 +36,13 @@
     "index.js",
     "lib"
   ],
-  "homepage": "https://github.com/semantic-release/condition-travis#readme",
+  "homepage": "https://github.com/semantic-release/condition-solano#readme",
   "keywords": [
     "publish",
     "release",
     "semantic-release",
-    "travis",
-    "travis-ci"
+    "solano",
+    "solano-ci"
   ],
   "license": "MIT",
   "main": "index.js",
@@ -72,7 +69,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/semantic-release/condition-travis.git"
+    "url": "https://github.com/semantic-release/condition-solano.git"
   },
   "scripts": {
     "cm": "git-cz",
