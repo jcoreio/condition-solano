@@ -2,6 +2,7 @@
 
 [semantic-release](https://github.com/semantic-release/semantic-release) plugin to check [Solano CI](https://solanolabs.com/) environment before publishing.
 
+[![Travis](https://img.shields.io/travis/jcoreio/condition-travis.svg)](https://travis-ci.org/jcoreio/condition-travis)
 [![Codecov](https://img.shields.io/codecov/c/github/jcoreio/condition-solano.svg)](https://codecov.io/gh/jcoreio/condition-solano)
 [![Greenkeeper badge](https://badges.greenkeeper.io/jcoreio/condition-solano.svg)](https://greenkeeper.io/)
 
