@@ -22,12 +22,36 @@ Verify that `semantic-release` is running:
 
 The plugin is used by default by [semantic-release](https://github.com/semantic-release/semantic-release) so no specific configuration is required if `githubToken`, `githubUrl`, and `githubApiPathPrefix` are set via environment variable.
 
-Always run `semantic-release` in a `post_build` hook so that it runs after all workers in the build matrix succeed.
+If you are building with multiple versions of node, use Solano build `profiles` and check the `$SOLANO_PROFILE_NAME` in
+the `post_build` hook to make sure you only run `semantic-release` on the desired version of node.
 
 ```yml
-nodejs:
-  version: '8.9'
+plan:
+  - node_4
+  - node_6
+  - node_8
+profiles:
+  node_4:
+    nodejs:
+      version: '4.4'
+  node_6:
+    nodejs:
+      version: '6.11.5'
+  node_8:
+    nodejs:
+      version: '8.9.0'
 
 hooks:
-  post_build: npm run semantic-release
-```
+  post_build: |
+    # Only publish if all tests have passed
+    if [[ "passed" != "$TDDIUM_BUILD_STATUS" ]]; then
+      echo "\$TDDIUM_BUILD_STATUS = $TDDIUM_BUILD_STATUS"
+      echo "Will only publish on passed builds"
+      exit
+    fi
+    # Only publish on 'node_8' profile
+    if [[ "node_8" != "$SOLANO_PROFILE_NAME" ]]; then
+      echo "Will only publish on 'node_8' profile"
+      exit
+    fi
+    npm run semantic-release
